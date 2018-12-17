@@ -194,7 +194,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
   add_definitions(-D_M_ARM=1)
   add_definitions(-D_M_ARM_64=1)
   # CRC instruction set is used in the CRC32 hash function
-  check_and_add_flag(HAVE_ARCH_ARMV8 -march=armv8-a+crc)
+  check_and_add_flag(HAVE_ARCH_ARMV8 -march=NATIVE)
 else()
   message(FATAL_ERROR "You're building on an unsupported platform: "
       "'${CMAKE_SYSTEM_PROCESSOR}' with ${CMAKE_SIZEOF_VOID_P}-byte pointers."
@@ -285,7 +285,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
 
   # Specify target CPUs.
   check_and_add_flag(HAVE_MSSSE4.2 -mssse4.2)
-  check_and_add_flag(HAVE_ARCH_CORE6 -march=core6)
+  check_and_add_flag(HAVE_ARCH_CORE6 -march=NATIVE)
 
   # Linker flags.
   # Drop unreachable code and data.
