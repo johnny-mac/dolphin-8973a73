@@ -285,7 +285,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
 
   # Specify target CPUs.
   check_and_add_flag(HAVE_MSSSE4.2 -mssse4.2)
-  check_and_add_flag(HAVE_ARCH_CORE6 -march=NATIVE)
+  check_and_add_flag(HAVE_ARCH_CORE6 -march=native)
 
   # Linker flags.
   # Drop unreachable code and data.
